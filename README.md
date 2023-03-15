@@ -1,51 +1,30 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+# Lab ChartJS Madrid
 
-# LAB | ChartJS
+## Objetivo
+Diseñar cinco gráficos a través de la librería ChartJS (utilizar [la versión 3](https://cdnjs.com/libraries/Chart.js/3.9.1)]. 
+Los datos serán obtenidos mediante [axios](https://axios-http.com/) de la [API de montañas rusas](https://multiapi-app.fly.dev/coasters/allCoasters).
 
+## Materiales
+Se provee la base de trabajo con ExpressJS asi como la vista de estadísticas y el tratamiento estético base.
 
-## Introduction
+## Gráficos
+El objetivo del producto son los siguientes charts:
 
-You are about to design five data visulization charts trough the ChartJS library (using [version 3](https://cdnjs.com/libraries/Chart.js/3.9.1)]. 
-The data will be fetched using [Axios](https://axios-http.com/) from this [rollercoaster API](https://multiapi-app.fly.dev/coasters/allCoasters).
+### Gráfico de barras
+Comparador de velocidad entre las cinco montañas rusas más rápidas (propiedad `speed`)
 
-The base application with ExpressJS is provided as well as the stats view and the required CSS styling.
+### Gráfico de dougnut
+Comparador de longitud (propiedad `length`) de todas las montañas rusas en tres clasificaciones: menos de 1000m, de 1000 a 1500m, más de 1500m
 
+### Gráfico de área polar
+Comparador de países (propiedad `country`) de todas las montañas rusas en cuatro clasificaciones: EEUU, España, Japón y China
 
-## Requirements
+### Gráfico de radar
+Comparador de inversiones (propiedad `inversions`) de todas las montañas rusas con más de 5 inversiones
 
-- Fork this repo
-- Clone this repo
-
-## Submission
-
-- Upon completion, run the following commands:
-
-  ```
-  git add .
-  git commit -m "done"
-  git push origin master
-  ```
-
-- Create Pull Request so your TAs can check up your work.
-
-## Instructions
+### Gráfico de barra + línea
+Comparador de velocidad (propiedad `speed` en gráfico de barra) con altura (propiedad `height` en gráfico de línea) de las primeras cinco montañas rusas de la API. Es necesario combinar dos `datasets`, indicando una propiedad `type` específica para variar uno de los dos.
 
 
-### Bar chart
-Compare coaster's speed (property `speed`) using the five fastest rollercoasters
-
-### Dougnut chart
-Compare coaster's length (`length` property) in three classifications: less than 1000m, 1000 to 1500m, more than 1500m.
-
-### Polar area chart
-Compare coaster's length (`country` property) in four classifications: USA, Spain, Japan and China.
-
-### Radar chart
-Compare coaster's inversions (`inversions` property) only of those with 5 or more inversions.
-
-### Bar + line chart
-Compare coaster's speed (`speed` property in bar chart) with height (`height` property in line chart) of the first five roller coasters from the API. It is necessary to combine two `datasets`, indicating a specific `type` property to vary from one chart type to another.
-
-
-## Target product preview
-![219382932-5c4e2930-871c-45ab-a705-378fc062e3df](https://user-images.githubusercontent.com/26923217/225287800-8dafaffc-1fa8-4391-8176-d1c0c2cc1e9d.png)
+## Producto objetivo
+![localhost_5005_estadisticas](https://user-images.githubusercontent.com/46670724/219382932-5c4e2930-871c-45ab-a705-378fc062e3df.png)
