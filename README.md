@@ -13,7 +13,7 @@ El objetivo del producto son los siguientes charts:
 ### Gráfico de barras
 Comparador de velocidad entre las cinco montañas rusas más rápidas (propiedad `speed`)
 
-### Gráfico de dougnut
+### Gráfico de doughnut
 Comparador de longitud (propiedad `length`) de todas las montañas rusas en tres clasificaciones: menos de 1000m, de 1000 a 1500m, más de 1500m
 
 ### Gráfico de área polar
