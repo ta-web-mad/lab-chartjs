@@ -10,22 +10,28 @@ axios
 
 function printCoastersCharts(coasters) {
   renderFastestChar(coasters)
+  renderLengthChar(coasters)
+  renderCountryChar(coasters)
   console.log(coasters)
 }
+
+//id = "chart1"
 function renderFastestChar(coasters) {
   const coastersSpeed = []
   const coasterNames = []
-  coasters
-    .map(coaster => {
-      coastersSpeed.push(coaster.speed)
-      coasterNames.push(coaster.name)
-    });
+
+  coasters.map(coaster => {
+    coastersSpeed.push(coaster.speed)
+    coasterNames.push(coaster.name)
+  });
 
   const data = {
     labels: coasterNames,
     datasets: [{
       data: coastersSpeed,
-      backgroundColor: 
+      backgroundColor: colors.alphas,
+      borderColor: colors.solids,
+      borderWidth: 2
     }]
   }
   const options = {
@@ -36,47 +42,72 @@ function renderFastestChar(coasters) {
     }
   }
 
-  new Chart = ('chart1', { type: 'bar', coastersSpeed, options })
+  new Chart('chart1', { type: 'bar', data, options })
+}
+//chart2
+
+function renderLengthChar(coasters) {
+  const data = {
+    labels: ["-1000", "1000/1500", "+1500"],
+    datasets: [{
+      data: [
+        coasters.filter(coaster => coaster.length < 1000).length,
+        coasters.filter(coaster => coaster.length >= 1000 || coaster.length <= 1500).length,
+        coasters.filter(coaster => coaster.length > 1500).length
+      ],
+      backgroundColor: colors.alphas,
+      borderColor: colors.solids,
+      borderWidth: 2,
+    }]
+  }
+
+  new Chart('chart2', {
+    type: 'doughnut',
+    data
+  })
 }
 
-//id = "chart1"
-printCoastersCharts()
+function renderCountryChar(coasters) {
+  let countryNames = []
+  let EEUU = 0
+  let Spain = 0
+  let Japan = 0
+  let China = 0
+  let countryData = [EEUU, Spain, Japan, China]
+
+  /*  coasters.forEach(coaster => {
+     if (coaster.country === countryData[i]
+   }); */
+
+  console.log(countryData)
+
+  const data = {
+
+    labels: countryNames,
+
+    datasets: [{
+      label: 'Comparador de países',
+      data: countryData,
+      backgroundColor: colors.alphas,
+      borderColor: colors.solids,
+      borderWidth: 2,
+
+    }]
+  }
+}
 
 
 
-// country
-// :
-// "United States"
-// gForce
-// :
-// null
-// height
-// :
-// 138
-// inversions
-// :
-// 0
-// length
-// :
-// 950
-// model
-// :
-// "Accelerator Coaster"
-// name
-// :
-// "Kingda Ka"
-// park
-// :
-// "Six Flags Great Adventure"
-// speed
-// :
-// 206
-// type
-// :
-// (4)['Roller Coaster', 'Steel', 'Sit Down', 'Extreme']
-// year
-// :
-// 2005
-// _id
-// :
-// { $oid: '5e8ef56a60fa824d1e2db3bf' }
+
+
+new Chart('chart3', {
+  type: 'polarArea',
+  data: data,
+})
+
+
+//chart2
+
+
+
+
