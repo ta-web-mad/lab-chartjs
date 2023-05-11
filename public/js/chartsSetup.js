@@ -5,9 +5,78 @@ const colors = {
 
 axios
   .get('https://multiapi-app.fly.dev/coasters/allCoasters')
-  .then(({ data }) => printCoastersCharts(data))
+  .then(({ data }) => printCoastersCharts(data.slice(0, 5)))
   .catch(err => console.log(err))
 
 function printCoastersCharts(coasters) {
-  console.log('PARTY!', coasters)
+  renderFastestChar(coasters)
+  console.log(coasters)
 }
+function renderFastestChar(coasters) {
+  const coastersSpeed = []
+  const coasterNames = []
+  coasters
+    .map(coaster => {
+      coastersSpeed.push(coaster.speed)
+      coasterNames.push(coaster.name)
+    });
+
+  const data = {
+    labels: coasterNames,
+    datasets: [{
+      data: coastersSpeed,
+      backgroundColor: 
+    }]
+  }
+  const options = {
+    plugins: {
+      legend: {
+        display: false
+      }
+    }
+  }
+
+  new Chart = ('chart1', { type: 'bar', coastersSpeed, options })
+}
+
+//id = "chart1"
+printCoastersCharts()
+
+
+
+// country
+// :
+// "United States"
+// gForce
+// :
+// null
+// height
+// :
+// 138
+// inversions
+// :
+// 0
+// length
+// :
+// 950
+// model
+// :
+// "Accelerator Coaster"
+// name
+// :
+// "Kingda Ka"
+// park
+// :
+// "Six Flags Great Adventure"
+// speed
+// :
+// 206
+// type
+// :
+// (4)['Roller Coaster', 'Steel', 'Sit Down', 'Extreme']
+// year
+// :
+// 2005
+// _id
+// :
+// { $oid: '5e8ef56a60fa824d1e2db3bf' }
