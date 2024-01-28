@@ -1,5 +1,5 @@
 # Lab ChartJS Madrid
-
+a
 ## Objetivo
 Diseñar cinco gráficos a través de la librería ChartJS (utilizar [la versión 3](https://cdnjs.com/libraries/Chart.js/3.9.1)]. 
 Los datos serán obtenidos mediante [axios](https://axios-http.com/) de la [API de montañas rusas](https://multiapi-app.fly.dev/coasters/allCoasters).
